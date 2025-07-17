@@ -13,35 +13,35 @@ namespace web_api_demo.Controllers
 
         //GET api/values
         [HttpGet]
-        public IEnumerable<string> GetValues()
+        public IEnumerable<string> Get()
         {
             return strings;
         }
 
         //GET api/values/5
         [HttpGet("{id}")]
-        public string GetValues(int id)
+        public string Get(int id)
         {
             return strings[id];
         }
 
         //POST api/values
         [HttpPost]
-        public void PostValues([FromBody] string value)
+        public void Post([FromBody] string value)
         {
             strings.Add(value);
         }
 
         //PUT api/values/5
         [HttpPut]
-        public void PutValues(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] string value)
         {
             strings[id] = value;
         }
 
         //DELETE api/values/5
         [HttpDelete]
-        public void DeleteValues(int id)
+        public void Delete(int id)
         {
             strings.RemoveAt(id);
         }
